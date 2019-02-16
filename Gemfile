@@ -13,7 +13,7 @@ gem 'sqlite3', '1.3.13'
 gem 'byebug',  '9.0.6', platform: :mri
 
 gem 'coffee-script-source', '1.8.0'
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'bootstrap-sass', '3.3.7'
 
 group :development do
   gem 'web-console',           '3.5.1'
