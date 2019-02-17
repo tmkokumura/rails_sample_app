@@ -5,7 +5,11 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(name: "Tomoki Okumura", email: "test@example.com")
   end
   
-  test "should be valid" do
+  def teardown
+    # User.destroy_all
+  end
+  
+  test "user should be valid" do
     assert @user.valid?
   end
   
@@ -50,4 +54,19 @@ class UserTest < ActiveSupport::TestCase
       assert_not @user.valid?, "#{address.inspect} should be invalid"
     end
   end
+  
+  test "email addresses should be unique 1" do
+    duplicate_user = @user.dup
+    duplicate_user.email = @user.email.upcase
+    @user.save
+    assert_not duplicate_user.valid?
+  end
+  
+  test "email addresses should be unique 2" do
+    duplicate_user = @user.dup
+    duplicate_user.email = @user.email.upcase
+    @user.save
+    assert_not duplicate_user.save
+  end
+  
 end
