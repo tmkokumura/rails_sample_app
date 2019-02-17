@@ -15,6 +15,8 @@ gem 'byebug',  '9.0.6', platform: :mri
 gem 'coffee-script-source', '1.8.0'
 gem 'bootstrap-sass', '3.3.7'
 
+gem 'bcrypt',         '3.1.12'
+
 group :development do
   gem 'web-console',           '3.5.1'
   gem 'listen',                '3.1.5'
